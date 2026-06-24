@@ -37,17 +37,16 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
 
 <style>
   :root{
-    --bg:#0b0807;
-    --surface:#16100f;
-    --surface-2:#1f1514;
-    --border:#2c1d1b;
-    --red:#e23b2e;
-    --red-deep:#b21d12;
-    --green:#19b35a;
-    --green-deep:#13934a;
+    --bg:#0b0b0d;
+    --surface:#161619;
+    --surface-2:#1e1e22;
+    --border:#2a2a30;
+    --green:#21c95a;
+    --green-deep:#16a046;
+    --green-soft:rgba(33,201,90,.12);
     --gold:#e6a93a;
-    --text:#f5efed;
-    --muted:#b6a6a3;
+    --text:#f3f3f5;
+    --muted:#9a9aa3;
     --radius:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -62,9 +61,9 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
 
   /* ---------- topo / banner ---------- */
   .topbar{
-    background:linear-gradient(90deg,var(--red-deep),var(--red));
-    color:#fff;text-align:center;font-size:13px;font-weight:700;
-    padding:8px 10px;letter-spacing:.2px;
+    background:var(--surface);color:var(--muted);text-align:center;
+    font-size:12px;font-weight:600;padding:9px 10px;letter-spacing:.4px;
+    border-bottom:1px solid var(--border);
   }
   .banner{width:100%}
   .banner img{width:100%;height:auto}
@@ -72,9 +71,9 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
   /* ---------- cards ---------- */
   .card{
     background:var(--surface);border:1px solid var(--border);
-    border-radius:var(--radius);padding:14px;margin-top:14px;
+    border-radius:var(--radius);padding:15px 14px;margin-top:14px;
   }
-  .card-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;margin-bottom:10px}
+  .card-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;margin-bottom:11px}
   .card-title .dot{width:9px;height:9px;border-radius:50%;background:var(--green)}
 
   /* ---------- resumo do pedido ---------- */
@@ -90,8 +89,8 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
     border:1px dashed var(--border);border-radius:12px;padding:11px;margin-top:10px;
     cursor:pointer;background:var(--surface-2);transition:border-color .15s,background .15s;
   }
-  .bump.promo{border-style:solid;border-color:var(--gold);background:#1f1810}
-  .bump.on{border-color:var(--green);border-style:solid;background:#15201a}
+  .bump.promo{border-style:solid;border-color:var(--gold);background:rgba(230,169,58,.07)}
+  .bump.on{border-color:var(--green);border-style:solid;background:var(--green-soft)}
   .bump input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--green)}
   .bump img{width:52px;height:52px;border-radius:8px;object-fit:cover;flex:none;background:#000}
   .bump .b-name{font-weight:700;font-size:14px;padding-right:52px}
@@ -109,39 +108,50 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
   .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-weight:600}
   .field input{
     width:100%;background:var(--surface-2);border:1px solid var(--border);color:var(--text);
-    border-radius:11px;padding:13px;font-size:15px;outline:none;
+    border-radius:11px;padding:13px;font-size:15px;outline:none;transition:border-color .15s;
   }
-  .field input:focus{border-color:var(--red)}
+  .field input:focus{border-color:var(--green)}
+  .field input::placeholder{color:#6a6a72}
 
-  /* ---------- total + cta ---------- */
-  .total-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
-  .total-row .t-label{font-size:14px;color:var(--muted)}
-  .total-row .t-value{font-size:24px;font-weight:900;color:#fff}
+  /* ---------- bloco de pagamento (PIX) ---------- */
+  .pay-text{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .pay-hl{color:var(--text);font-weight:700}
+  .pay-divider{height:1px;background:var(--border);margin:14px 0}
+  .valor-row{display:flex;align-items:baseline;gap:8px}
+  .valor-row .valor-label{font-size:14px;color:var(--muted);font-weight:600}
+  .valor-row .valor-val{font-size:20px;font-weight:900;color:var(--green)}
   .desc-tag{
-    display:inline-block;background:#1f1810;color:var(--gold);border:1px solid var(--gold);
-    font-size:12px;font-weight:700;border-radius:8px;padding:3px 8px;margin-top:8px;
+    display:inline-block;background:var(--green-soft);color:var(--green);border:1px solid var(--green);
+    font-size:12px;font-weight:700;border-radius:8px;padding:3px 8px;margin:0 0 10px;
   }
   .cta{
     display:block;width:100%;border:none;cursor:pointer;margin-top:14px;
     background:linear-gradient(90deg,var(--green-deep),var(--green));
-    color:#fff;font-size:17px;font-weight:900;border-radius:13px;padding:16px;
-    letter-spacing:.3px;transition:transform .08s;
+    color:#04130a;font-size:16px;font-weight:900;border-radius:12px;padding:16px;
+    letter-spacing:.4px;text-transform:uppercase;transition:transform .08s;
   }
   .cta:active{transform:scale(.99)}
   .cta:disabled{opacity:.55;cursor:not-allowed}
+  .secure-box{
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    margin-top:12px;padding:12px;border:1px solid var(--border);border-radius:11px;
+    font-size:13px;color:var(--muted);font-weight:600;
+  }
+  .secure-box .lock{filter:grayscale(1) brightness(1.4)}
   .secure{text-align:center;font-size:12px;color:var(--muted);margin-top:10px}
 
   /* ---------- PIX ---------- */
   .pix-head{text-align:center;margin-bottom:4px}
   .pix-head h2{font-size:20px;font-weight:900}
   .pix-urgency{
-    background:linear-gradient(90deg,var(--red-deep),var(--red));color:#fff;
-    text-align:center;font-weight:800;font-size:14px;border-radius:11px;padding:10px;margin:12px 0;
+    background:var(--surface-2);border:1px solid var(--border);color:var(--text);
+    text-align:center;font-weight:700;font-size:14px;border-radius:11px;padding:11px;margin:12px 0;
   }
-  .qr-box{text-align:center;background:#fff;border-radius:14px;padding:14px;margin:0 auto;max-width:240px}
+  .pix-urgency #pixTimer{color:var(--green);font-weight:900}
+  .qr-box{text-align:center;background:#fff;border-radius:14px;padding:14px;margin:0 auto;max-width:240px;border:2px solid var(--green)}
   .qr-box img{width:100%;height:auto;border-radius:6px}
   .copia{margin-top:14px;background:var(--surface-2);border:1px solid var(--border);border-radius:11px;padding:11px;font-size:12px;color:var(--muted);word-break:break-all;max-height:64px;overflow:auto}
-  .copy-btn{display:block;width:100%;margin-top:10px;border:none;cursor:pointer;background:var(--red);color:#fff;font-weight:800;font-size:15px;border-radius:11px;padding:14px}
+  .copy-btn{display:block;width:100%;margin-top:10px;border:none;cursor:pointer;background:linear-gradient(90deg,var(--green-deep),var(--green));color:#04130a;font-weight:900;font-size:15px;border-radius:11px;padding:14px;text-transform:uppercase;letter-spacing:.4px}
   .pix-status{text-align:center;margin-top:14px;font-size:14px;color:var(--muted)}
   .pix-status .spin{display:inline-block;width:15px;height:15px;border:2px solid var(--border);border-top-color:var(--green);border-radius:50%;vertical-align:-2px;margin-right:7px;animation:sp 1s linear infinite}
   @keyframes sp{to{transform:rotate(360deg)}}
@@ -150,33 +160,33 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
 
   /* ---------- obrigado ---------- */
   .ok-badge{width:66px;height:66px;border-radius:50%;background:var(--green);margin:6px auto 14px;display:flex;align-items:center;justify-content:center}
-  .ok-badge::after{content:"";width:20px;height:34px;border:solid #fff;border-width:0 5px 5px 0;transform:rotate(45deg);margin-top:-6px}
+  .ok-badge::after{content:"";width:20px;height:34px;border:solid #04130a;border-width:0 5px 5px 0;transform:rotate(45deg);margin-top:-6px}
   .ok-wrap{text-align:center}
   .ok-wrap h2{font-size:22px;font-weight:900}
   .ok-wrap p{color:var(--muted);font-size:14px;margin-top:8px}
-  .access-btn{display:block;margin-top:16px;text-decoration:none;text-align:center;background:linear-gradient(90deg,var(--green-deep),var(--green));color:#fff;font-weight:900;font-size:16px;border-radius:13px;padding:16px}
+  .access-btn{display:block;margin-top:16px;text-decoration:none;text-align:center;background:linear-gradient(90deg,var(--green-deep),var(--green));color:#04130a;font-weight:900;font-size:16px;border-radius:13px;padding:16px;text-transform:uppercase;letter-spacing:.4px}
   .access-extra{margin-top:10px}
   .access-extra a{display:block;text-decoration:none;text-align:center;margin-top:8px;background:var(--surface-2);border:1px solid var(--border);color:var(--text);font-weight:700;font-size:14px;border-radius:11px;padding:13px}
 
   /* ---------- modal saida ---------- */
-  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;padding:18px;z-index:50}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:18px;z-index:50}
   .modal{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px 20px;max-width:340px;width:100%;text-align:center}
   .modal .gift{width:58px;height:58px;border-radius:50%;background:var(--green);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:26px}
   .modal h3{font-size:21px;font-weight:900}
   .modal p{color:var(--muted);font-size:14px;margin-top:8px}
-  .modal .pct{font-size:15px;font-weight:800;color:#fff;border:1px dashed var(--green);border-radius:10px;padding:9px;margin:14px 0}
+  .modal .pct{font-size:15px;font-weight:800;color:var(--text);border:1px dashed var(--green);border-radius:10px;padding:9px;margin:14px 0}
   .modal .pct b{color:var(--green)}
   .modal-bumps{font-size:13px;color:var(--muted);margin:10px 0 4px}
-  .modal-apply{display:block;width:100%;border:none;cursor:pointer;background:linear-gradient(90deg,var(--green-deep),var(--green));color:#fff;font-weight:900;font-size:16px;border-radius:12px;padding:15px}
+  .modal-apply{display:block;width:100%;border:none;cursor:pointer;background:linear-gradient(90deg,var(--green-deep),var(--green));color:#04130a;font-weight:900;font-size:16px;border-radius:12px;padding:15px;text-transform:uppercase;letter-spacing:.4px}
   .modal-skip{display:block;width:100%;background:none;border:none;color:var(--muted);font-size:13px;margin-top:12px;cursor:pointer}
 
   /* ---------- rodape ---------- */
   .site-footer{margin-top:34px;padding:22px 0 6px;border-top:1px solid var(--border);text-align:center}
   .site-footer .foot-brand{font-weight:800;font-size:14px;letter-spacing:1px;color:var(--text)}
-  .site-footer .foot-legal{font-size:11px;line-height:1.6;color:#7a6d6a;margin:12px auto 0;max-width:380px}
+  .site-footer .foot-legal{font-size:11px;line-height:1.6;color:#74747c;margin:12px auto 0;max-width:380px}
   .site-footer .foot-pay{font-size:12px;color:var(--muted);margin-top:12px}
   .site-footer .foot-pay b{color:var(--text);font-weight:700}
-  .site-footer .foot-copy{font-size:10px;color:#6a5d5a;margin-top:10px}
+  .site-footer .foot-copy{font-size:10px;color:#5f5f67;margin-top:10px}
 
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important;transition:none !important}
@@ -189,11 +199,11 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
 <div id="sec-venda">
 
   <!-- EDITAR: barra de topo (opcional) -->
-  <div class="topbar">// liberacao na hora apos o pix · vagas limitadas hoje</div>
+  <div class="topbar">Pagamento instantaneo · acesso liberado na hora</div>
 
   <!-- EDITAR: banner do topo (troque a URL) -->
   <div class="banner">
-    <img src="#URL_BANNER_TOPO" alt="Banner" width="440" height="180"
+    <img src="https://doram.shop/wp-content/uploads/2026/06/617e16a12b9168d205be46c33b206a5e.webp" alt="Banner" width="440" height="180"
          onerror="this.style.display='none'"/>
   </div>
 
@@ -203,19 +213,12 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
     <div class="card">
       <div class="card-title"><span class="dot"></span> Resumo do Pedido</div>
       <div class="order">
-        <img id="prodImg" src="#URL_CAPA_PRODUTO" alt="" onerror="this.style.opacity='.3'"/>
+        <img id="prodImg" src="https://doram.shop/wp-content/uploads/2026/06/d3ab419fc64fa2f9f3249a63.png" alt="" onerror="this.style.opacity='.3'"/>
         <div>
           <div class="o-name" id="prodNome">PRODUTO AQUI</div>
           <div class="o-price"><span id="prodPreco">R$ 10,00</span> <small>a vista no PIX</small></div>
         </div>
       </div>
-    </div>
-
-    <!-- BUMPS (1 a 5) - desconto progressivo (piramide) -->
-    <div class="card">
-      <div class="card-title"><span class="dot"></span> <span id="bumpsTitulo">Adicione mais jogos com desconto</span></div>
-      <div class="bump-hint">Quanto mais jogos voce leva, mais desconto recebe hoje.</div>
-      <div id="bumpsBox"><!-- preenchido via JS a partir do CFG --></div>
     </div>
 
     <!-- IDENTIFICACAO -->
@@ -236,16 +239,34 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
         <input id="fEmail" type="email" inputmode="email" autocomplete="email"
                placeholder="seuemail@exemplo.com"/>
       </div>
+    </div>
+
+    <!-- BUMPS (1 a 5) - desconto progressivo (piramide) -->
+    <div class="card">
+      <div class="card-title"><span class="dot"></span> <span id="bumpsTitulo">Adicione mais jogos com desconto</span></div>
+      <div class="bump-hint">Quanto mais jogos voce leva, mais desconto recebe hoje.</div>
+      <div id="bumpsBox"><!-- preenchido via JS a partir do CFG --></div>
+    </div>
+
+    <!-- INFORMACOES SOBRE O PAGAMENTO (PIX) -->
+    <div class="card">
+      <div class="card-title"><span class="dot"></span> Informacoes sobre o pagamento via PIX</div>
+
+      <p class="pay-text">O pagamento e instantaneo e liberacao imediata</p>
+      <p class="pay-text">Ao clicar em <span class="pay-hl">"Finalizar compra"</span> voce sera encaminhado para um ambiente seguro</p>
+
+      <div class="pay-divider"></div>
 
       <div id="descTag" class="desc-tag hidden">Desconto de 20% aplicado!</div>
 
-      <div class="total-row">
-        <span class="t-label">Total</span>
-        <span class="t-value" id="totalVal">R$ 10,00</span>
+      <div class="valor-row">
+        <span class="valor-label">Valor a vista:</span>
+        <span class="valor-val" id="totalVal">R$ 10,00</span>
       </div>
 
-      <button class="cta" id="btnGerar">GERAR PIX E PAGAR</button>
-      <div class="secure">Pagamento 100% seguro - Mercado Pago</div>
+      <button class="cta" id="btnGerar">FINALIZAR COMPRA</button>
+
+      <div class="secure-box"><span class="lock">&#128274;</span> Pagamento 100% seguro</div>
     </div>
 
   </div>
@@ -603,7 +624,7 @@ function setupExitIntent(){
     $("modalSaida").classList.add("hidden");
     track("ViewContent", { content_name:"cupom_20_aplicado" });
     /* leva o lead de volta ao checkout */
-    var alvo = $("sec-venda").querySelector(".total-row");
+    var alvo = $("sec-venda").querySelector(".valor-row");
     if(alvo) alvo.scrollIntoView({ behavior:"smooth", block:"center" });
   });
   $("btnPularDesc").addEventListener("click", function(){
