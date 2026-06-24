@@ -209,17 +209,19 @@ src="https://www.facebook.com/tr?id=1362142175982864&ev=PageView&noscript=1"/></
 
   <div class="wrap">
 
-    <!-- RESUMO DO PEDIDO -->
+  <!-- RESUMO DO PEDIDO -->
     <div class="card">
       <div class="card-title"><span class="dot"></span> Resumo do Pedido</div>
       <div class="order">
-        <img id="prodImg" src="https://doram.shop/wp-content/uploads/2026/06/d3ab419fc64fa2f9f3249a63.png" alt="" onerror="this.style.opacity='.3'"/>
+        <img id="prodImg" src="#URL_CAPA_PRODUTO" alt="" onerror="this.style.opacity='.3'"/>
         <div>
-          <div class="GTA BRASIL" id="GTA BRASIL">PRODUTO AQUI</div>
+          <div class="o-name" id="prodNome">PRODUTO AQUI</div>
           <div class="o-price"><span id="prodPreco">R$ 10,00</span> <small>a vista no PIX</small></div>
         </div>
       </div>
     </div>
+O que mudou: class="BRASIL" id="BRASIL" → class="o-name" id="prodNome". Só isso destrava os bumps.
+Lembrando: o src da imagem e o texto do nome são sobrescritos pelo CFG, então a capa e o nome você troca no CFG.PRODUTO (capa e nome), não aqui.
 
     <!-- IDENTIFICACAO -->
     <div class="card">
@@ -361,9 +363,9 @@ var CFG = {
   ITEM_LABEL: "jogos",                  /* EDITAR: palavra usada na copy (ex: jogos, produtos, ebooks) */
 
   PRODUTO: {
-    nome:  "PRODUTO AQUI",              /* EDITAR */
+    nome:  "GTA BRASIL",              /* EDITAR */
     preco: 10.00,                       /* EDITAR */
-    capa:  "#URL_CAPA_PRODUTO"          /* EDITAR */
+    capa:  "https://doram.shop/wp-content/uploads/2026/06/d3ab419fc64fa2f9f3249a63.png"          /* EDITAR */
   },
 
   DESCONTO_PCT: 20,                     /* aplicado ao preco do produto */
