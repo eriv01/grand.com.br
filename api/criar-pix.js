@@ -10,15 +10,15 @@
 // ====================================================================
 
 // ---- EDITAR: mesma tabela de precos do index.html ----
-const PRODUTO = { nome: "PRODUTO AQUI", preco: 10.00 };
+const PRODUTO = { nome: "GTo", preco: 10.00 };
 const DESCONTO_PCT = 20; // aplicado ao preco do produto
 
 // Bumps partem de 7,90; o UNITARIO cai conforme a QTD selecionada.
 // idx 0 = 1 bump, idx 1 = 2 bumps... piso 4,90 nos ultimos.
 // Precisa bater com CFG.BUMP_TIERS do index.html.
 const BUMP_NOMES = {
-  bump1: "Bump 01", bump2: "Bump 02", bump3: "Bump 03",
-  bump4: "Bump 04", bump5: "Bump 05"
+  bump1: "Euro Truck Simulator BR", bump2: "NEED FOR SPEED 2 BR", bump3: "BLACK - DUBLADO BR ",
+  bump4: "DFL26 MOBILE ", bump5: "RESIDENT-EVIL 4"
 };
 const BUMP_TIERS = [7.90, 6.90, 5.90, 4.90, 4.90];
 // ------------------------------------------------------
